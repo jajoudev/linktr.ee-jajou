@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Reddit+Mono:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Pixelify+Sans:wght@400..700&family=Reddit+Mono:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Noto+Sans+JP:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Reddit+Mono:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* Root for fonts */
+:root {
+  --inter: "Inter", sans-serif;
+  --itim: "Itim", cursive;
+  --pixel-sans: "Pixelify Sans", sans-serif;
+  --japenese-noto-sans: "Noto Sans JP", sans-serif;
+  --twitch-bg: linear-gradient(70deg, #8c44f7, #581c87, #5b21b6);
+  --youtube-bg: linear-gradient(70deg, #b91c1c, red, #450a0a);
+  --discord-bg: linear-gradient(70deg, #5865f2, blue, #4f46e5);
+  --speedrun-bg: linear-gradient(70deg, #fbbf24, yellow, #ffcf33);
+}
+
+html,
+body {
+  cursor: url("../images/pikachu.png"), auto;
+}
+
+html,
+body {
+  cursor: url("../images/pikachu-pointer.png"), pointer;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--inter);
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.discord-hover {
+  background-image: url(../images/discord.png) !important;
+  position: relative;
+  background-size: cover;
+  transition: 5s;
+}
+
+.youtube-hover {
+  background-image: url(../images/youtube.png) !important;
+  position: relative;
+  background-size: cover;
+  transition: 5s;
+}
+
+.twitch-hover {
+  background-image: url(../images/twitch.png) !important;
+  position: relative;
+  background-size: cover;
+  transition: 5s;
+}
+
+body {
+  background-color: black;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+body * {
+  position: relative;
+}
+
+.profile-card {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 64px 16px 32px;
+}
+
+.profile-card img {
+  border-radius: 50%;
+  width: 10%;
+  margin: 14px;
+}
+
+.profile-card .name,
+.description {
+  margin: 4px;
+  text-align: center;
+  font-family: var(--itim);
+  font-size: 20px;
+}
+
+.link-profile-youtube,
+.link-profile-twitch,
+.link-profile-discord,
+.link-profile-speedrun {
+  width: 30%;
+  text-align: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.link-profile-youtube {
+  background: var(--youtube-bg);
+  background-size: 200% 100%;
+  animation: 5s backgroundPosition infinite;
+}
+
+.link-profile-youtube:hover {
+  animation: 2s pulse infinite;
+}
+
+.link-profile-twitch {
+  background: var(--twitch-bg);
+  background-size: 200% 100%;
+  animation: 5s backgroundPosition infinite;
+}
+
+.link-profile-twitch:hover {
+  animation: 2s pulse infinite;
+}
+
+.link-profile-discord {
+  background: var(--discord-bg);
+  background-size: 200% 100%;
+  animation: 5s backgroundPosition infinite;
+}
+
+.link-profile-discord:hover {
+  animation: 2s pulse infinite;
+}
+
+.link-profile-speedrun {
+  background: var(--speedrun-bg);
+  background-size: 200% 100%;
+  animation: 5s backgroundPosition infinite;
+}
+
+.link-profile-speedrun:hover {
+  animation: 2s pulse infinite;
+}
+
+.link-profile-speedrun a {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link-profile-twitch .text-under {
+  font-size: 12px;
+}
+
+.audio-tracker {
+  position: fixed;
+  top: 0;
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-container {
+  flex: 1;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #2563eb;
+}
+
+#current-time,
+#duration {
+  font-size: 12px;
+  color: white;
+}
+
+@keyframes backgroundPosition {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
