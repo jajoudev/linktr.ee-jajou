@@ -46,11 +46,9 @@ fetch("./assets/data/musics.json")
     window.addEventListener("click", () => {
       if (audio.paused) {
         audio.play();
-        clickMusic.classList.remove("hidden");
         music.classList.remove('hidden')
       } else {
         audio.pause();
-        clickMusic.classList.add("hidden");
         music.classList.add('hidden')
       }
     });
