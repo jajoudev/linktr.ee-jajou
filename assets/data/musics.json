@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Super Mario 64 Water Lofi",
+    "music": "./assets/music/sm64-lofi-water.mp3"
+  },
+
+  {
+    "name": "Super Mario 64 File Select Lofi",
+    "music": "./assets/music/file-select-sm64-lofi.mp3"
+  }
+]

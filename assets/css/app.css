@@ -16,9 +16,14 @@
   --speedrun-bg: linear-gradient(70deg, #fbbf24, yellow, #ffcf33);
 }
 
+.hidden {
+  display: none !important;
+}
+
 html,
 body {
   cursor: url("../images/pikachu.png"), auto;
+  overflow: hidden;
 }
 
 * {

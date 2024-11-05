@@ -2,7 +2,10 @@ const discordHover = document.querySelector(".link-profile-discord");
 const youtubeHover = document.querySelector(".link-profile-youtube");
 const twitchHover = document.querySelector(".link-profile-twitch");
 
-const audio = document.querySelector('audio')
+const audio = document.querySelector("audio");
+const clickMusic = document.querySelector(".click-music");
+
+const music = document.querySelector(".music");
 
 const descriptions = ["Youtuber & Web Dev", "I Love Play Video Games"];
 
@@ -22,7 +25,7 @@ function setupHoverEffect(element, className) {
     document.body.classList.add(className);
 
     element.addEventListener("mouseleave", () => {
-      document.body.classList.remove(className)
+      document.body.classList.remove(className);
     });
   });
 }
@@ -33,6 +36,27 @@ setupHoverEffect(discordHover, "discord-hover");
 setupHoverEffect(youtubeHover, "youtube-hover");
 setupHoverEffect(twitchHover, "twitch-hover");
 
-window.addEventListener('click', () => {
-  audio.play()
-})
+fetch("./assets/data/musics.json")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data);
+
+    window.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        clickMusic.classList.remove("hidden");
+        music.classList.remove('hidden')
+      } else {
+        audio.pause();
+        clickMusic.classList.add("hidden");
+        music.classList.add('hidden')
+      }
+    });
+
+    const randomMusic = data[Math.floor(Math.random() * data.length)];
+    audio.src = randomMusic.music;
+
+    music.textContent = "En train d'écouter: " + randomMusic.name;
+  });
