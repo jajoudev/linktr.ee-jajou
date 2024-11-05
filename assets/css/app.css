@@ -21,10 +21,6 @@ body {
   cursor: url("../images/pikachu.png"), auto;
 }
 
-body {
-  transition: background-color 0.3s ease, color 0.3s ease; /* Change these properties as needed */
-}
-
 * {
   box-sizing: border-box;
   font-family: var(--inter);
@@ -120,7 +116,7 @@ body * {
 }
 
 .link-profile-youtube:hover {
-  animation: 2s pulse infinite;
+  animation: 2s pulseButtons infinite;
 }
 
 .link-profile-twitch {
@@ -130,7 +126,7 @@ body * {
 }
 
 .link-profile-twitch:hover {
-  animation: 2s pulse infinite;
+  animation: 2s pulseButtons infinite;
 }
 
 .link-profile-discord {
@@ -140,7 +136,7 @@ body * {
 }
 
 .link-profile-discord:hover {
-  animation: 2s pulse infinite;
+  animation: 2s pulseButtons infinite;
 }
 
 .link-profile-speedrun {
@@ -150,7 +146,7 @@ body * {
 }
 
 .link-profile-speedrun:hover {
-  animation: 2s pulse infinite;
+  animation: 2s pulseButtons infinite;
 }
 
 .link-profile-speedrun a {
@@ -177,6 +173,12 @@ a {
   font-size: 10px;
 }
 
+.click-music {
+  animation: 5s ease-in-out pulseOpacity infinite;
+  color: grey;
+  font-size: 14px;
+}
+
 @keyframes backgroundPosition {
   0% {
     background-position: 0 50%;
@@ -189,7 +191,7 @@ a {
   }
 }
 
-@keyframes pulse {
+@keyframes pulseButtons {
   0%,
   100% {
     transform: scale(1);
@@ -211,5 +213,15 @@ a {
   }
   100% {
     color: red;
+  }
+}
+
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
   }
 }
