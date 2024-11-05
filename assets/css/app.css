@@ -21,9 +21,8 @@ body {
   cursor: url("../images/pikachu.png"), auto;
 }
 
-html,
 body {
-  cursor: url("../images/pikachu-pointer.png"), pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Change these properties as needed */
 }
 
 * {
@@ -165,37 +164,6 @@ a {
 
 .link-profile-twitch .text-under {
   font-size: 12px;
-}
-
-.audio-tracker {
-  position: fixed;
-  top: 0;
-  width: 20%;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.content-audio {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.progress-container {
-  flex: 1;
-  height: 8px;
-  background-color: #ddd;
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background-color: #2563eb;
 }
 
 #current-time,
